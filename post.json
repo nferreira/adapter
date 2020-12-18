@@ -1,0 +1,22 @@
+{
+   "timeout": 30000,
+   "use_proxy": true,
+   "ignored_resources": [
+     "image"
+   ],
+   "actions":[
+      {
+         "type":"navigate",
+         "to":"https://www.google.com/"
+      },
+      {
+         "type":"wait_visible",
+         "for":"#main",
+         "selector_by":"id"
+      },
+      {
+         "type":"evaluate",
+         "script":"new XMLSerializer().serializeToString(document.doctype) + document.documentElement.outerHTML;"
+      }
+   ]
+}
